@@ -17,7 +17,7 @@ COPY quirknotes/backend ./
 EXPOSE 4000
 
 # Command to start the backend server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
 
 # Start a new stage for MongoDB
 FROM mongo:latest
