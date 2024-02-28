@@ -4,14 +4,23 @@ FROM node:20.0.0-alpine AS frontend
 # Set the working directory for frontend
 WORKDIR /app/quirknotes/frontend
 
+# Print a message to the console
+RUN echo "Building frontend..."
+
 # Copy frontend package files
 COPY quirknotes/frontend/package*.json ./
+
+# Print a message to the console
+RUN echo "Installing frontend dependencies..."
 
 # Install frontend dependencies
 RUN npm install
 
 # Copy frontend source code
 COPY quirknotes/frontend ./
+
+# Print a message to the console
+RUN echo "Building frontend..."
 
 # Build frontend
 RUN npm run build
